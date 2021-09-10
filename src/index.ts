@@ -12,12 +12,16 @@ const port =process.env.PORT ||5000;
 createConnection().then(async connection => {
 
     console.log("Inserting a new user into the database...");
-   
+    const categories = new Categories();
+    const menu = new Menu();
+    
+ 
+
     app.use(express.json());
     app.use(cors());
     app.use("/v1", webv1);
      app.use(notFound);
-  
+    console.log("Saved a new user with id: " + categories.categoryId);
 
     console.log("Loading users from the database...");
     const users = await connection.manager.find(Categories);

@@ -13,8 +13,8 @@ export class Customers extends BaseEntity{
     @Column()
     notified: boolean;
     @Column()
-    CreatedAt:Timestamp;
-    //CategoriesID O Realtion with M Menu Table//
+    CreatedAt:Date;
+ 
     @OneToMany(type => OrderItem, orderItem => orderItem.customer,{cascade:true})
     orderItem: OrderItem[];
 
