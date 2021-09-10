@@ -7,6 +7,6 @@ const route = express.Router();
 
   
 route.get('/menu',CategoriesController.getAll);
-route.get('/orders',CoustermsOrderController.getAll);
+route.get('/orders',CoustermsOrderController.getOrder);
 
 export default route;
