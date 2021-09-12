@@ -1,5 +1,6 @@
-import {Entity, PrimaryGeneratedColumn, Column, BaseEntity, ManyToOne, JoinColumn} from "typeorm"; 
+import {Entity, PrimaryGeneratedColumn, Column, BaseEntity, ManyToOne, JoinColumn, OneToOne, OneToMany} from "typeorm"; 
 import { Categories } from "./Categories";
+import { OrderItem } from "./Order";
 
 @Entity()
 export class Menu extends BaseEntity{
@@ -10,6 +11,8 @@ export class Menu extends BaseEntity{
     foodName: string;
     @Column()
     foodPrice: string;
+
+    
     @ManyToOne(type => Categories, categories => categories.item)
     categoriesID: Categories;
         // Menu Realtion with CategoriesID Table//
