@@ -1,12 +1,8 @@
-import { Request, Response } from "express";
-import { print } from "util";
- 
+import { Request, Response } from "express"; 
 import { Customers } from "../src/entity/Customers";
-import { OrderItem } from "../src/entity/Order";
 import { errRes, okRes } from "../tools/checkResponseState";
-const accountSid='AC9ef3ffea92012cd829cc20430a434bd2';
-const authToken='ec5b9d365be17cbd3829d5b28220d800';
-const client= require('twilio')(accountSid,authToken);
+
+// const client= require('twilio')(accountSid,authToken);
 export default class CoustermsController
 {
 /**
