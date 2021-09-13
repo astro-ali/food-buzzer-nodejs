@@ -13,6 +13,9 @@ export class OrderItem extends BaseEntity{
     @Column()
     amount:number;
 
-    @ManyToOne(OrderItem => Customers, customers => customers.orderItem)
+    
+
+
+    @ManyToOne(OrderItem => Customers, customers => customers.orderItem,{onDelete:"CASCADE"})
     customer: Customers;
  }

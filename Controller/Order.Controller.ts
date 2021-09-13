@@ -20,30 +20,5 @@ static async getOrders(req: Request, res: Response): Promise<object> {
   return res.json({status:true ,customers});
 }
 
-static async addOrder(req: Request, res: Response): Promise<object> {
-
-  var body = req.body;
-
-  console.log(body);
-
-  let data;
-  try{
-    data = await OrderItem.create({
-      ...body,CustomerId: req.body.Customer});
-
  
-
-    await data.save();
-    console.log(data);
-  }catch(err)
-  { 
-    
-    return errRes(res, "Error input");
-
-  }
-
-  return okRes(res, { data });  
 }
-}
-
- 

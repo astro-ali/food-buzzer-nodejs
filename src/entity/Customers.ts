@@ -17,7 +17,7 @@ export class Customers extends BaseEntity{
     @CreateDateColumn()
     CreatedAt:Date;
  
-    @OneToMany(type => OrderItem, orderItem => orderItem.customer,{cascade:true})
+    @OneToMany(type => OrderItem, orderItem => orderItem.customer,{cascade:true,onDelete:"CASCADE"})
     orderItem: OrderItem[];
 
 }
